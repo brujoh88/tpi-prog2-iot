@@ -363,11 +363,30 @@ public class AppMenu {
 
     private void crearConfiguracion() throws Exception {
         input.mostrarEncabezado("CREAR NUEVA CONFIGURACIÓN DE RED");
+        System.out.println("  La configuración debe asociarse a un dispositivo existente.\n");
+
+        // Pedir ID del dispositivo
+        long dispositivoId = input.leerLongPositivo("ID del dispositivo a configurar: ");
+
+        // Verificar que el dispositivo existe
+        DispositivoIoT dispositivo = dispositivoService.getById(dispositivoId);
+
+        // Verificar que no tenga ya una configuración
+        if (dispositivo.getConfiguracionRed() != null) {
+            input.mostrarError("El dispositivo ya tiene una configuración de red asociada.");
+            input.mostrarAdvertencia("Use 'Actualizar configuración' para modificarla.");
+            input.pausar();
+            return;
+        }
+
+        System.out.println("\n  Dispositivo: " + dispositivo.getSerial() + " - " + dispositivo.getModelo());
+        System.out.println("  Ubicación: " + dispositivo.getUbicacion() + "\n");
 
         boolean dhcp = input.leerBoolean("¿DHCP habilitado?");
 
         ConfiguracionRed config = new ConfiguracionRed();
         config.setDhcpHabilitado(dhcp);
+        config.setDispositivoId(dispositivoId);  // Asociar al dispositivo
 
         if (dhcp) {
             config.setIp("0.0.0.0");
@@ -384,6 +403,7 @@ public class AppMenu {
 
         configuracionService.insertar(config);
         input.mostrarExito("Configuración creada exitosamente con ID: " + config.getId());
+        input.mostrarExito("Asociada al dispositivo: " + dispositivo.getSerial());
         input.pausar();
     }
 

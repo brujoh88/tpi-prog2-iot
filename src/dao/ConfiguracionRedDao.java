@@ -20,8 +20,8 @@ public class ConfiguracionRedDao implements GenericDao<ConfiguracionRed> {
 
     @Override
     public void crear(ConfiguracionRed entity, Connection conn) throws SQLException {
-        String sql = "INSERT INTO ConfiguracionRed (eliminado, ip, mascara, gateway, dnsPrimario, dhcpHabilitado) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ConfiguracionRed (eliminado, ip, mascara, gateway, dnsPrimario, dhcpHabilitado, dispositivo_id) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setBoolean(1, entity.getEliminado() != null ? entity.getEliminado() : false);
@@ -30,6 +30,7 @@ public class ConfiguracionRedDao implements GenericDao<ConfiguracionRed> {
             pstmt.setString(4, entity.getGateway());
             pstmt.setString(5, entity.getDnsPrimario());
             pstmt.setBoolean(6, entity.getDhcpHabilitado());
+            pstmt.setLong(7, entity.getDispositivoId());
 
             int affectedRows = pstmt.executeUpdate();
 
@@ -84,7 +85,7 @@ public class ConfiguracionRedDao implements GenericDao<ConfiguracionRed> {
     @Override
     public void actualizar(ConfiguracionRed entity, Connection conn) throws SQLException {
         String sql = "UPDATE ConfiguracionRed SET ip = ?, mascara = ?, gateway = ?, " +
-                     "dnsPrimario = ?, dhcpHabilitado = ?, eliminado = ? WHERE id = ?";
+                     "dnsPrimario = ?, dhcpHabilitado = ?, dispositivo_id = ?, eliminado = ? WHERE id = ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, entity.getIp());
@@ -92,8 +93,9 @@ public class ConfiguracionRedDao implements GenericDao<ConfiguracionRed> {
             pstmt.setString(3, entity.getGateway());
             pstmt.setString(4, entity.getDnsPrimario());
             pstmt.setBoolean(5, entity.getDhcpHabilitado());
-            pstmt.setBoolean(6, entity.getEliminado());
-            pstmt.setLong(7, entity.getId());
+            pstmt.setLong(6, entity.getDispositivoId());
+            pstmt.setBoolean(7, entity.getEliminado());
+            pstmt.setLong(8, entity.getId());
 
             int affectedRows = pstmt.executeUpdate();
 
@@ -231,6 +233,7 @@ public class ConfiguracionRedDao implements GenericDao<ConfiguracionRed> {
         configuracion.setGateway(rs.getString("gateway"));
         configuracion.setDnsPrimario(rs.getString("dnsPrimario"));
         configuracion.setDhcpHabilitado(rs.getBoolean("dhcpHabilitado"));
+        configuracion.setDispositivoId(rs.getLong("dispositivo_id"));
 
         return configuracion;
     }

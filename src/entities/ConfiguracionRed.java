@@ -16,6 +16,7 @@ public class ConfiguracionRed {
     private String gateway;
     private String dnsPrimario;
     private Boolean dhcpHabilitado;
+    private Long dispositivoId;  // FK al dispositivo asociado (para relación 1:1)
 
     /**
      * Constructor vacío requerido por el patrón DAO.
@@ -130,6 +131,14 @@ public class ConfiguracionRed {
 
     public void setDhcpHabilitado(Boolean dhcpHabilitado) {
         this.dhcpHabilitado = dhcpHabilitado;
+    }
+
+    public Long getDispositivoId() {
+        return dispositivoId;
+    }
+
+    public void setDispositivoId(Long dispositivoId) {
+        this.dispositivoId = dispositivoId;
     }
 
     @Override
