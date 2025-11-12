@@ -28,6 +28,12 @@ dist/
 .project
 .classpath
 
+# NetBeans specific (keep project files, ignore user-specific)
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
 # OS specific
 .DS_Store
 Thumbs.db
