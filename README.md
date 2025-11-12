@@ -101,10 +101,6 @@ src/
 - **Singleton**: DatabaseConnection
 - **Strategy**: GenericDao/GenericService
 
-### Diagrama UML
-
-![Diagrama UML](docs/diagrama-uml.png)
-
 ## Funcionalidades
 
 ### Gestión de Dispositivos IoT
@@ -223,8 +219,6 @@ Este proyecto reutiliza completamente el modelo de datos diseñado en el TFI de 
 - **Vista reutilizada**: `Vista_Inventario_Red_Activo`
 - **Constraints probados**: PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, índices
 
-Ver documentación completa en: [CLAUDE.md](CLAUDE.md)
-
 ## Tecnologías
 
 - Java 21
@@ -288,14 +282,9 @@ WHERE d.eliminado = FALSE AND c.id IS NULL;
 ```
 TPI-Programacion2/
 ├── README.md                    # Este archivo
-├── CLAUDE.md                    # Documentación completa del TPI
 ├── build.xml                    # Configuración de Ant
 ├── config.properties.example    # Plantilla de configuración
 ├── .gitignore                   # Archivos ignorados por Git
-├── docs/
-│   ├── diagrama-uml.png         # Diagrama UML
-│   ├── informe.pdf              # Informe técnico (6-8 páginas)
-│   └── guia-video.md            # Guía para el video demostrativo
 ├── sql/
 │   ├── schema.sql               # Creación de BD y tablas
 │   └── data.sql                 # Datos de prueba
@@ -323,8 +312,6 @@ Contenido del video (10-15 minutos):
 5. Verificación en base de datos
 
 ## Trabajo en Equipo
-
-El desarrollo se organizó siguiendo el flujo de Git descrito en [ESTRATEGIA_GIT_BRANCHES.md](ESTRATEGIA_GIT_BRANCHES.md):
 
 ### División de Tareas
 
