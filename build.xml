@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TPI-Programacion2" default="compile" basedir=".">
+    <description>
+        Sistema de Gestión de Dispositivos IoT
+        TPI - Programación 2 - UTN FRVM
+    </description>
+
+    <!-- Propiedades del proyecto -->
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+    <property name="dist.dir" location="dist"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="main.class" value="main.Main"/>
+
+    <!-- Classpath para compilación y ejecución -->
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- Target: init - Crear directorios necesarios -->
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${lib.dir}"/>
+    </target>
+
+    <!-- Target: clean - Limpiar archivos compilados -->
+    <target name="clean" description="Eliminar archivos compilados">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Target: compile - Compilar código fuente -->
+    <target name="compile" depends="init" description="Compilar código fuente Java">
+        <javac srcdir="${src.dir}"
+               destdir="${build.dir}"
+               includeantruntime="false"
+               encoding="UTF-8"
+               debug="true"
+               source="1.8"
+               target="1.8">
+            <classpath refid="classpath"/>
+        </javac>
+        <echo message="Compilación exitosa"/>
+    </target>
+
+    <!-- Target: run - Ejecutar la aplicación -->
+    <target name="run" depends="compile" description="Ejecutar la aplicación">
+        <java classname="${main.class}" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <pathelement location="${build.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- Target: jar - Crear archivo JAR ejecutable -->
+    <target name="jar" depends="compile" description="Crear archivo JAR ejecutable">
+        <jar destfile="${dist.dir}/tpi-iot.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+        </jar>
+        <echo message="JAR creado en ${dist.dir}/tpi-iot.jar"/>
+    </target>
+
+    <!-- Target: all - Limpiar, compilar y crear JAR -->
+    <target name="all" depends="clean,compile,jar" description="Compilar y empaquetar todo"/>
+
+</project>

@@ -1,0 +1,10 @@
+# Database Configuration
+# IMPORTANTE: La base de datos se llama 'iot' (nombre del TFI de BD I)
+db.url=jdbc:mysql://localhost:3306/iot?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+db.user=root
+db.password=mi_password_seguro
+db.driver=com.mysql.cj.jdbc.Driver
+
+# Application Configuration
+app.name=Sistema de Gesti\u00f3n de Dispositivos IoT
+app.version=1.0.0
