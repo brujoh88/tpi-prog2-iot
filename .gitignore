@@ -13,6 +13,9 @@
 *.tar.gz
 *.rar
 
+# EXCEPCIÓN: Permitir JARs de dependencias en lib/
+!lib/*.jar
+
 # Virtual machine crash logs
 hs_err_pid*
 
