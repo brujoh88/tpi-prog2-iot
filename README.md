@@ -20,8 +20,9 @@ Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reu
 
 - **Java 21** o superior
 - **MySQL 8.0** o superior (o Docker para contenedor MySQL)
-- **Apache Ant** (para compilación)
+- **Apache Ant** (para compilación desde línea de comandos)
 - **MySQL Connector/J 8.0.33** (incluido en `lib/`)
+- **NetBeans IDE 21+** (opcional, recomendado para estudiantes)
 - **Docker** (opcional, recomendado para facilitar la configuración de MySQL)
 
 ## Instalación y Configuración
@@ -127,6 +128,33 @@ db.driver=com.mysql.cj.jdbc.Driver
 
 ### 5. Compilar y Ejecutar
 
+El proyecto puede ejecutarse de **3 formas diferentes**. Se recomienda usar NetBeans IDE para mayor comodidad:
+
+#### Opción 1: NetBeans IDE (Recomendado para estudiantes)
+
+El proyecto está completamente configurado para NetBeans. Solo necesitas:
+
+1. **Abrir el proyecto:**
+   - Menú: `File → Open Project`
+   - Navegar hasta la carpeta `tpi-prog2-iot`
+   - NetBeans detectará automáticamente el proyecto
+
+2. **Ejecutar la aplicación:**
+   - Presiona `F6` o clic derecho en el proyecto → `Run`
+   - NetBeans compilará y ejecutará automáticamente
+
+3. **Limpiar y construir:**
+   - Presiona `Shift + F11` o clic derecho → `Clean and Build`
+
+4. **Solo compilar:**
+   - Presiona `F11` o clic derecho → `Build`
+
+**Nota:** NetBeans usa el archivo `build.xml` (Apache Ant) internamente, por lo que toda la configuración ya está lista.
+
+#### Opción 2: Apache Ant (Línea de comandos)
+
+Si prefieres usar la terminal o no tienes NetBeans:
+
 **Compilar el proyecto:**
 ```bash
 ant compile
@@ -146,6 +174,45 @@ ant clean
 ```bash
 ant jar
 ```
+
+#### Opción 3: Java directo (Sin Ant ni NetBeans)
+
+Para ejecutar directamente con Java:
+
+```bash
+# Compilar manualmente
+javac -d build -cp "lib/*" src/**/*.java
+
+# Ejecutar
+java -cp "build:lib/*" main.Main
+```
+
+## Herramientas de Desarrollo
+
+Este proyecto es compatible con múltiples IDEs y herramientas:
+
+### IDEs Recomendados
+
+- **NetBeans IDE** (Recomendado): Configuración completa incluida en `nbproject/`
+  - Descarga: https://netbeans.apache.org/
+  - Versión recomendada: NetBeans 21 o superior
+  - Soporte nativo para proyectos Ant
+
+- **IntelliJ IDEA**: Compatible mediante importación de proyecto Ant
+  - File → New → Project from Existing Sources → Seleccionar `build.xml`
+
+- **Eclipse**: Compatible mediante plugin Ant
+  - File → Import → Existing Ant Buildfile
+
+- **Visual Studio Code**: Compatible con extensiones de Java
+  - Extension Pack for Java (Microsoft)
+  - Debugger for Java
+
+### Herramientas de Línea de Comandos
+
+- **Apache Ant**: Sistema de construcción incluido (`build.xml`)
+- **Java JDK 21**: Compilador y runtime
+- **Git**: Control de versiones
 
 ## Arquitectura del Proyecto
 
@@ -229,7 +296,7 @@ src/
 
 ## Flujo de Uso
 
-1. Ejecutar `ant run` o `java -cp "build:lib/*" main.Main`
+1. Ejecutar la aplicación (usando NetBeans con `F6`, `ant run`, o `java -cp "build:lib/*" main.Main`)
 2. El sistema verifica la conexión a la base de datos
 3. Seleccionar opción del menú principal
 4. Seguir las instrucciones en pantalla
