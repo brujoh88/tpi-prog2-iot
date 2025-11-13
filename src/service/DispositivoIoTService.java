@@ -111,19 +111,21 @@ public class DispositivoIoTService implements GenericService<DispositivoIoT> {
                 throw new DuplicateEntityException("Ya existe una configuración con la IP: " + configuracion.getIp());
             }
 
-            // 3. Crear la configuración de red primero
-            configuracionDao.crear(configuracion, conn);
-            System.out.println("[DispositivoIoTService] ConfiguracionRed creada con ID: " + configuracion.getId());
-
-            // 4. Asociar la configuración al dispositivo
-            dispositivo.setConfiguracionRed(configuracion);
-
-            // 5. Actualizar la FK en ConfiguracionRed (no existe columna en DispositivoIoT)
-            // Primero crear el dispositivo
+            // 3. Crear el DispositivoIoT PRIMERO para obtener su ID
             dispositivoDao.crear(dispositivo, conn);
             System.out.println("[DispositivoIoTService] DispositivoIoT creado con ID: " + dispositivo.getId());
 
-            // 6. Commit de la transacción
+            // 4. Setear el dispositivo_id en la configuración (FK requerida)
+            configuracion.setDispositivoId(dispositivo.getId());
+
+            // 5. Crear la ConfiguracionRed con el dispositivo_id válido
+            configuracionDao.crear(configuracion, conn);
+            System.out.println("[DispositivoIoTService] ConfiguracionRed creada con ID: " + configuracion.getId());
+
+            // 6. Asociar la configuración al dispositivo en memoria (para retornar completo)
+            dispositivo.setConfiguracionRed(configuracion);
+
+            // 7. Commit de la transacción
             conn.commit();
             System.out.println("[DispositivoIoTService] Transacción completada exitosamente");
 
