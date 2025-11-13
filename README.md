@@ -10,11 +10,11 @@ Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reu
 
 ## Integrantes
 
-| Nombre | Legajo | Email | Rol |
-|--------|--------|-------|-----|
-| **Gustavo Tiseira** | XXXXX | gustavotiseira@gmail.com | Líder técnico / Integrador |
-| **David Vergara** | XXXXX | david.e.vergara2025@gmail.com | Desarrollador |
-| **Mauricio López** | XXXXX | rinaldi.el@hotmail.com | Desarrollador |
+| Nombre | Email | Rol |
+|--------|-------|-----|
+| **Gustavo Tiseira** | gustavotiseira@gmail.com | Líder técnico / Integrador |
+| **David Vergara** | david.e.vergara2025@gmail.com | Desarrollador |
+| **Mauricio López** | rinaldi.el@hotmail.com | Desarrollador |
 
 ## Requisitos
 
