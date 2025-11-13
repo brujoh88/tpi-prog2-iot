@@ -31,8 +31,8 @@ Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reu
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/TPI-Programacion2.git
-cd TPI-Programacion2
+git clone https://github.com/brujoh88/tpi-prog2-iot.git
+cd tpi-prog2-iot
 ```
 
 ### 2. Configurar MySQL con Docker (Recomendado)
