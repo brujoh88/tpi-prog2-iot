@@ -42,8 +42,8 @@ public class Main {
         System.out.println("═══════════════════════════════════════════════════════════════");
         System.out.println("           SISTEMA DE GESTIÓN DE DISPOSITIVOS IoT             ");
         System.out.println("═══════════════════════════════════════════════════════════════");
-        System.out.println("  TPI - Programación 2 - UTN FRVM                             ");
-        System.out.println("  Versión 1.0.0 - 2024                                         ");
+        System.out.println("  TPI - Programación 2 - UTN                                  ");
+        System.out.println("  Versión 1.0.0 - 2025                                         ");
         System.out.println("═══════════════════════════════════════════════════════════════");
         System.out.println();
     }

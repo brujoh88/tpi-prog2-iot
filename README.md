@@ -479,7 +479,7 @@ git log --author="Mauricio" --oneline
 
 ## Licencia
 
-Proyecto académico - UTN FRVM - Tecnicatura Universitaria en Programación
+Proyecto académico - UTN - Tecnicatura Universitaria en Programación
 
 ## Contacto
 
@@ -490,6 +490,6 @@ Para consultas sobre el proyecto:
 
 ---
 
-**Última actualización**: Noviembre 2024
+**Última actualización**: Noviembre 2025
 
 **Versión**: 1.0.0
