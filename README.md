@@ -308,13 +308,16 @@ try {
     conn = DatabaseConnection.getConnection();
     conn.setAutoCommit(false);
 
-    // 1. Crear ConfiguracionRed
-    configuracionDao.crear(configuracion, conn);
-
-    // 2. Crear DispositivoIoT asociado
+    // 1. Crear DispositivoIoT PRIMERO para obtener su ID
     dispositivoDao.crear(dispositivo, conn);
 
-    // 3. Commit si todo OK
+    // 2. Setear el dispositivo_id en ConfiguracionRed
+    configuracion.setDispositivoId(dispositivo.getId());
+
+    // 3. Crear ConfiguracionRed con el dispositivo_id válido
+    configuracionDao.crear(configuracion, conn);
+
+    // 4. Commit si todo OK
     conn.commit();
 
 } catch (Exception e) {
