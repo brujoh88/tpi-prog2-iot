@@ -3,7 +3,7 @@
 -- Archivo: schema.sql
 -- Descripción: Creación de base de datos y tablas
 -- Autor: Mauricio López
--- Fecha: 2024-11
+-- Fecha: 2025-11
 -- =====================================================
 
 -- Crear base de datos

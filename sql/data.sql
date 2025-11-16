@@ -3,7 +3,7 @@
 -- Archivo: data.sql
 -- Descripción: Datos de prueba para la aplicación
 -- Autor: Mauricio López
--- Fecha: 2024-11
+-- Fecha: 2025-11
 -- =====================================================
 
 USE iot;
