@@ -6,7 +6,25 @@ Sistema de gestión de dispositivos IoT (Internet of Things) con configuración 
 
 Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reutilizando el modelo de datos ya diseñado, probado y validado.
 
-**Video demostración del TFI de BD I**: https://www.youtube.com/watch?v=Pw-BVHe8esg&t=635s
+---
+
+## 🎥 Video Demostrativo del TPI
+
+> **⚠️ IMPORTANTE:** Este video es parte de la entrega del TPI y muestra el funcionamiento completo del sistema.
+
+**🔗 [Ver Video en YouTube](https://youtu.be/szscB3yAgzI)**
+
+**Contenido del video:**
+- ✅ Presentación del equipo y arquitectura del proyecto
+- ✅ Demostración completa del CRUD de Dispositivos IoT
+- ✅ Demostración completa del CRUD de Configuraciones de Red
+- ✅ Transacciones atómicas (commit y rollback)
+- ✅ Explicación del código (entities, dao, service, menu)
+- ✅ Verificación de datos en MySQL
+
+**Video demostración del TFI de BD I**: https://www.youtube.com/watch?v=Pw-BVHe8esg
+
+---
 
 ## Integrantes
 
@@ -503,14 +521,9 @@ TPI-Programacion2/
 
 ## Video Demostrativo
 
-🎥 **[Enlace al video]** - PENDIENTE
-
-Contenido del video (10-15 minutos):
-1. Presentación del equipo
-2. Demostración CRUD completa
-3. Explicación de código (entities, dao, service, menu)
-4. Demostración de transacción con rollback
-5. Verificación en base de datos
+> 🎥 **Ver la sección "Video Demostrativo del TPI" al inicio de este README**
+>
+> 🔗 **[Ver Video en YouTube](https://youtu.be/szscB3yAgzI)**
 
 ## Trabajo en Equipo
 
