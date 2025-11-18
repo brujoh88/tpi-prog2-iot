@@ -26,6 +26,33 @@ Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reu
 
 ---
 
+## 📚 Documentación del Proyecto
+
+> **Todos los documentos técnicos están disponibles en la carpeta [`docs/`](docs/)**
+
+### Guía Rápida de Documentación
+
+| 📄 Documento | 🎯 Cuándo Consultarlo | 📍 Ubicación |
+|--------------|----------------------|--------------|
+| **[Informe Técnico](docs/INFORME_TECNICO.pdf)** | Para entender decisiones de diseño, arquitectura detallada, transacciones ACID, conclusiones y referencias completas | `docs/INFORME_TECNICO.pdf` |
+| **[Diagrama UML Completo](docs/UML-completo.pdf)** | Para ver todas las clases con atributos, métodos, tipos de datos y relaciones detalladas | `docs/UML-completo.pdf` |
+| **[Diagrama UML Simplificado](docs/UML-simplificado.pdf)** | Para entender la arquitectura general del sistema de un vistazo | `docs/UML-simplificado.pdf` |
+
+### Contenido del Informe Técnico (8 páginas)
+
+El informe incluye análisis completo de:
+
+1. **Introducción**: Descripción del dominio IoT y objetivos del TPI
+2. **Diseño**: Modelo de datos, decisiones de relación 1:1 con FK única, justificaciones técnicas
+3. **Arquitectura**: Explicación detallada de capas (config, entities, dao, service, main)
+4. **Persistencia**: Patrón de transacciones, garantías ACID, manejo de errores SQL
+5. **Validaciones**: Reglas de negocio y validaciones por entidad
+6. **Pruebas**: Casos de prueba, evidencias de rollback, consultas SQL ejecutadas
+7. **Conclusiones**: Aprendizajes, dificultades, mejoras futuras, trabajo en equipo
+8. **Referencias**: Documentación técnica, patrones, herramientas, y uso de IA (Claude Code)
+
+---
+
 ## Integrantes
 
 | Nombre | Email | Rol |
@@ -234,6 +261,10 @@ Este proyecto es compatible con múltiples IDEs y herramientas:
 
 ## Arquitectura del Proyecto
 
+> **📐 Ver diagramas visuales en [`docs/UML-completo.pdf`](docs/UML-completo.pdf) y [`docs/UML-simplificado.pdf`](docs/UML-simplificado.pdf)**
+>
+> **📖 Explicación detallada de arquitectura y decisiones de diseño en [`docs/INFORME_TECNICO.pdf`](docs/INFORME_TECNICO.pdf) (Secciones 2, 3 y 4)**
+
 ### Estructura de Paquetes
 
 ```
@@ -385,6 +416,8 @@ docker run -d --name mysql_tfi -e MYSQL_ROOT_PASSWORD=mi_password_seguro -e MYSQ
 
 ## Manejo de Transacciones
 
+> **📖 Para entender garantías ACID, patrón de transacciones y manejo de errores SQL, consulta [`docs/INFORME_TECNICO.pdf`](docs/INFORME_TECNICO.pdf) (Sección 4)**
+
 Ejemplo de transacción atómica (creación de dispositivo + configuración):
 
 ```java
@@ -504,6 +537,10 @@ TPI-Programacion2/
 ├── build.xml                    # Configuración de Ant
 ├── config.properties.example    # Plantilla de configuración
 ├── .gitignore                   # Archivos ignorados por Git
+├── docs/                        # 📚 Documentación técnica del TPI
+│   ├── INFORME_TECNICO.pdf      # Informe completo (8 páginas)
+│   ├── UML-completo.pdf         # Diagrama UML detallado
+│   └── UML-simplificado.pdf     # Diagrama UML de alto nivel
 ├── sql/
 │   ├── schema.sql               # Creación de BD y tablas
 │   └── data.sql                 # Datos de prueba
@@ -526,6 +563,8 @@ TPI-Programacion2/
 > 🔗 **[Ver Video en YouTube](https://youtu.be/szscB3yAgzI)**
 
 ## Trabajo en Equipo
+
+> **📖 Ver conclusiones sobre colaboración y uso de herramientas en [`docs/INFORME_TECNICO.pdf`](docs/INFORME_TECNICO.pdf) (Secciones 7.4 y 8.5)**
 
 ### División de Tareas
 
