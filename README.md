@@ -35,8 +35,8 @@ Este proyecto se integra con el Trabajo Final Integrador de Base de Datos I, reu
 | 📄 Documento | 🎯 Cuándo Consultarlo | 📍 Ubicación |
 |--------------|----------------------|--------------|
 | **[Informe Técnico](docs/INFORME_TECNICO.pdf)** | Para entender decisiones de diseño, arquitectura detallada, transacciones ACID, conclusiones y referencias completas | `docs/INFORME_TECNICO.pdf` |
-| **[Diagrama UML Completo](docs/UML-completo.pdf)** | Para ver todas las clases con atributos, métodos, tipos de datos y relaciones detalladas | `docs/UML-completo.pdf` |
-| **[Diagrama UML Simplificado](docs/UML-simplificado.pdf)** | Para entender la arquitectura general del sistema de un vistazo | `docs/UML-simplificado.pdf` |
+| **[Diagrama UML Completo](docs/UML-completo.pdf)** | Diagrama detallado de DispositivoIoT y ConfiguracionRed con **todos los métodos** (constructores, getters, setters, toString) | `docs/UML-completo.pdf` |
+| **[Diagrama UML Simplificado](docs/UML-simplificado.pdf)** | Mismo diagrama pero **sin los métodos setter** para mayor claridad visual y enfoque en la arquitectura | `docs/UML-simplificado.pdf` |
 
 ### Contenido del Informe Técnico (8 páginas)
 
@@ -261,7 +261,9 @@ Este proyecto es compatible con múltiples IDEs y herramientas:
 
 ## Arquitectura del Proyecto
 
-> **📐 Ver diagramas visuales en [`docs/UML-completo.pdf`](docs/UML-completo.pdf) y [`docs/UML-simplificado.pdf`](docs/UML-simplificado.pdf)**
+> **📐 Ver diagramas UML de las clases DispositivoIoT y ConfiguracionRed:**
+> - [`docs/UML-completo.pdf`](docs/UML-completo.pdf) - Incluye **todos los métodos** (constructores, getters, setters, toString)
+> - [`docs/UML-simplificado.pdf`](docs/UML-simplificado.pdf) - **Sin métodos setter** para mayor claridad visual
 >
 > **📖 Explicación detallada de arquitectura y decisiones de diseño en [`docs/INFORME_TECNICO.pdf`](docs/INFORME_TECNICO.pdf) (Secciones 2, 3 y 4)**
 
